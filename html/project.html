@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Selected software development and data analytics projects by Aldo." />
+    <title>Projects / Aldo</title>
+    <link rel="icon" type="image/png" href="../assets/img/brand/logo%20icon%20aldo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="../css/project.css" rel="stylesheet" />
+    <script src="https://use.typekit.net/jks1ssp.js"></script>
+    <script>
+      try {
+        Typekit.load();
+      } catch (error) {}
+    </script>
+    <style>
+      footer.career-footer{display:block}
+      body > .nav{box-sizing:border-box;position:fixed;z-index:1000;top:0;left:0;width:100%;height:66px;padding:0 max(24px,5vw);display:flex;align-items:center;justify-content:space-between;background:transparent;border:0;border-bottom:1px solid transparent;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;font-size:12px;line-height:normal;letter-spacing:-.01em;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease,backdrop-filter .35s ease}body > .nav.scrolled{background:rgba(255,255,255,.78);border-bottom-color:rgba(255,255,255,.8);box-shadow:0 9px 28px rgba(76,88,120,.11);-webkit-backdrop-filter:blur(18px) saturate(145%);backdrop-filter:blur(18px) saturate(145%);color:#8891aa}body > .nav .brand{display:flex;flex:0 0 60px;width:60px;height:60px;margin:0;padding:0;align-items:center;justify-content:center;line-height:0;text-decoration:none}body > .nav .brand img{display:block;width:60px;height:auto;max-width:none;margin:0;object-fit:contain}body > .nav .nav-links{display:flex;align-items:center;gap:27px;margin-left:auto;margin-right:28px}body > .nav .nav-links a{color:inherit;text-decoration:none;font-size:13px;transition:color .2s}body > .nav .nav-links a:hover,body > .nav .nav-links a[aria-current="page"]{color:#ff3c8d}body > .nav .nav-contact{box-sizing:border-box;display:inline-flex;width:56px;height:36px;padding:0;align-items:center;justify-content:center;border:1px solid currentColor;border-radius:99px;background:transparent;color:inherit;text-decoration:none;font-size:12px;transition:background .2s,transform .2s}body > .nav.scrolled .nav-contact{border:0;background:#bdc4d7;color:#fff}body > .nav .nav-contact:hover{background:#ff3c8d;border-color:#ff3c8d;color:#fff;transform:scale(1.03)}
+      @media(max-width:700px){body > .nav{height:56px;padding:0 16px}body > .nav .brand{flex-basis:32px;width:32px;height:32px}body > .nav .brand img{width:32px}body > .nav .nav-links{display:none}body > .nav .nav-contact{width:42px;height:30px;font-size:10px}}
+    </style>
+  </head>
+  <body class="project-page">
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Back to top"><img src="../assets/img/brand/logo%20icon%20aldo%20outline%20warna_no_bg.png" alt="Logo Aldo" /></a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="../index.html">Overview</a><a href="./careers.html">Careers</a><a href="./project.html" aria-current="page">Project</a><a href="./about.html">About</a></nav>
+      <a class="nav-contact" href="mailto:hello@yourname.com">CV</a>
+    </header>
+    <main id="top">
+      <section class="projects-hero" aria-labelledby="projects-title">
+        <div class="projects-shell">
+          <p class="projects-kicker">Projects</p>
+          <h1 id="projects-title">What I’ve<br />Worked On</h1>
+          <p class="projects-intro">A collection of projects that shaped how I think, analyze, and solve problems.</p>
+          <div class="project-filters" role="group" aria-label="Filter projects">
+            <button class="is-active" type="button" data-filter="all">All Project </button>
+            <button type="button" data-filter="software">Software Dev</button>
+            <button type="button" data-filter="analytics">Analytics Project</button>
+          </div>
+        </div>
+      </section>
+      <section class="projects-list projects-shell" aria-label="Project list">
+        <div class="project-group" data-group="software">
+          <header class="group-heading"><h2>Software Development</h2><p>A collection of projects that shaped how I think, analyze, and solve problems.</p></header>
+          <a class="project-card project-card-link" data-category="software" href="./jdih-summarize.html" aria-label="View JDIH project case study"><span class="project-number">01</span><div class="project-primary"><p class="project-type">Website</p><h3>Jaringan Dokumentasi Dan Informasi Hukum (JDIH)</h3><div class="project-tags"><span>PHP</span><span>Laravel</span><span>MySQL</span></div></div><p class="project-summary">A legal-documentation platform designed to make public information easier to find and understand.</p><dl class="project-meta"><div><dt>CRUD</dt><dd>Law Documentation</dd></div><div><dt>Alert</dt><dd>Notification</dd></div><div><dt>UI</dt><dd>Web Design</dd></div></dl></a>
+        </div>
+        <div class="project-group" data-group="analytics">
+          <header class="group-heading"><h2>Analytics Project</h2><p>A collection of projects that shaped how I think, analyze, and solve problems.</p></header>
+          <a class="project-card project-card-link" data-category="analytics" href="./kf-summarize.html" aria-label="View Kimia Farma project case study"><span class="project-number">02</span><div class="project-primary"><p class="project-type">Dashboarding</p><h3>Analysis of Kimia Farma’s Business Performance for 2020–2023</h3><div class="project-tags"><span>SQL</span><span>Data Studio</span></div></div><p class="project-summary">An end-to-end performance dashboard that turns historical transaction data into practical business insights.</p><dl class="project-meta"><div><dt>Market Intelligence</dt><dd>Market Research</dd></div><div><dt>Performance Insight</dt><dd>Performance KPI</dd></div><div><dt>Executive Dashboard</dt><dd>Dashboard Design</dd></div></dl></a>
+          <a class="project-card project-card-link" data-category="analytics" href="./gaikindo-summarize.html" aria-label="View Automotive Market Pulse project case study"><span class="project-number">03</span><div class="project-primary"><p class="project-type">Dashboarding</p><h3>Automotive Market Pulse 2025: Strategi Navigasi Disrupsi EV &amp; Optimasi Stok Dealer</h3><div class="project-tags"><span>SQL</span><span>Data Studio</span><span>Python</span><span>Excel</span></div></div><p class="project-summary">A market-readiness study connecting EV adoption signals with actionable inventory recommendations.</p><dl class="project-meta"><div><dt>Data Pipeline</dt><dd>Data Cleaning</dd></div><div><dt>Stock Recommendation</dt><dd>Stock Signal</dd></div><div><dt>Strategy Dashboard</dt><dd>Business Dashboard</dd></div></dl></a>
+          <a class="project-card project-card-link" data-category="analytics" href="./ai-impact-summ.html" aria-label="View Future of Work 2025: Navigasi Transisi Tenaga Kerja di Era AI"><span class="project-number">04</span><div class="project-primary"><p class="project-type">Dashboarding</p><h3>Future of Work 2025: Navigasi Transisi Tenaga Kerja di Era AI</h3><div class="project-tags"><span>SQL</span><span>Power BI</span><span>Python`</span></div></div><p class="project-summary">Mapping the impact of AI on the global workforce (2010–2025) through an analysis of automation risk, wage premiums, and the skills gap.</p><dl class="project-meta"><div><dt>Market Intelligence</dt><dd>Market Research</dd></div><div><dt>Risk & Salary</dt><dd>Benchmarking</dd></div><div><dt>Workforce Transition</dt><dd>Dashboard</dd></div></dl></a>
+        </div>
+      </section>
+    </main>
+    <footer class="career-footer">
+      <div class="career-footer__content"><img src="../assets/img/brand/aldo-bnw.svg" width="62" alt="aldo-bnw" /><p>"Data tells the story<br />I help uncover it."</p><nav aria-label="Footer navigation"><a href="https://www.linkedin.com/in/aldorakbar/">LinkedIn</a><a href="mailto:aldoakbar666@gmail.com">Email</a><a href="./about.html">About</a></nav></div>
+      <div class="career-footer__bottom"><div><span>Aldo Akbar Portofolio</span></div>
+    </footer>
+    <script>
+      const nav=document.querySelector('.nav');const updateNavigation=()=>nav.classList.toggle('scrolled',window.scrollY>24);window.addEventListener('scroll',updateNavigation,{passive:true});updateNavigation();
+      const filters=document.querySelectorAll('[data-filter]');const groups=document.querySelectorAll('[data-group]');filters.forEach((filter)=>filter.addEventListener('click',()=>{const selected=filter.dataset.filter;filters.forEach((button)=>button.classList.toggle('is-active',button===filter));groups.forEach((group)=>{group.hidden=selected!=='all'&&group.dataset.group!==selected})}));
+    </script>
+  </body>
+</html>

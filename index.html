@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of a data analyst who turns complex data into clear decisions." />
+    <title>Aldo Akbar - Business Analyst, Data Analyst & Business Intelligence Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/img/brand/logo%20icon%20aldo.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/img/brand/logo%20icon%20aldo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      footer.career-footer{display:block;margin-top:0;color:initial}
+      /* First scroll phase and project cards share one sticky section. */
+      .project-showcase{height:500vh;min-height:3100px}
+      .project-entry{position:absolute;z-index:3;inset:0;display:grid;place-items:center;overflow:hidden;pointer-events:none;opacity:1;transition:opacity .35s ease}
+      .project-entry::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,#5a1f55 100%);pointer-events:none}
+      .project-entry .intro-copy{position:relative;z-index:2}.project-entry .intro-count{z-index:2}.project-entry .intro-grid{z-index:1}
+      .project-stage,.project-progress,.project-scroll-note{opacity:0;transition:opacity .4s ease}
+      .projects-started .project-entry{opacity:0}.projects-started .project-stage,.projects-started .project-progress,.projects-started .project-scroll-note{opacity:1}
+      .project-stage{transition-delay:.08s}.project-progress{transition-delay:.16s}
+      @media(max-width:700px){.project-showcase{height:500vh;min-height:2800px}.project-entry .intro-copy{padding:0 20px}.project-entry .intro-copy h2{font-size:clamp(3.2rem,14vw,5.5rem)}.project-entry .intro-grid{grid-template-columns:repeat(3,140px);grid-template-rows:repeat(2,100px);gap:16px}.project-entry .intro-count{right:22px;bottom:5vh;font-size:9px}}
+    </style>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="cursor-glow"></div>
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <img src="assets/img/brand/logo%20icon%20aldo%20outline%20warna_no_bg.png" alt="Logo aldo" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="#top">Overview</a><a href="./html/careers.html">Careers</a><a href="./html/project.html">Project</a><a href="./html/about.html">About</a></nav>
+      <a class="nav-contact" href="mailto:hello@yourname.com">CV <span>↗</span></a>
+    </header>
+<!-- Section 01 (Hero)-->
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+           <div class="hero-mark"></div>
+          <h1>Aligning<br />insight to<br /><span>impact.</span></h1>
+          <p>I turn data into clear<br />decisions.</p>
+          <a class="hero-cta" href="#work">Explore my work <span>↓</span></a>
+        </div>
+        <div class="data-stage project-constellation" aria-label="Interactive project constellation">
+          <div class="constellation-orbit">
+            <div class="constellation-core" aria-hidden="true">
+              <img src="assets/img/brand/logo%20icon%20aldo.png" alt="Aldo logo" style="width:88%;height:88%;object-fit:contain;display:block;filter:drop-shadow(0 10px 12px rgba(255,255,255,0.18));" />
+            </div>
+            <a class="constellation-node node-jdih is-active" href="./html/jdih-summarize.html" data-number="01" data-category="SOFTWARE ENGINEERING" data-title="JDIH Portal" data-description="A legal-information platform built for clearer access, management, and compliance workflows."><span></span><strong>Software<br />Engineering</strong></a>
+            <a class="constellation-node node-kf" href="./html/kf-summarize.html" data-number="02" data-category="DATA ANALYTICS" data-title="Kimia Farma" data-description="Business-performance analytics that turns operational data into practical commercial insights."><span></span><strong>Business<br />Analyst</strong></a>
+            <a class="constellation-node node-gaikindo" href="./html/gaikindo-summarize.html" data-number="03" data-category="BUSINESS INTELLIGENCE" data-title="Market Pulse 2025" data-description="EV market signals and inventory recommendations for stronger dealer decisions."><span></span><strong>Business <br />Intelligence</strong></a>
+            <a class="constellation-node node-ai" href="./html/ai-impact-summ.html" data-number="04" data-category="AI WORKFORCE" data-title="Future of Work" data-description="Workforce intelligence for navigating automation, skills, and the transition to AI."><span></span><strong>Data<br />Analytics</strong></a>
+          </div>
+          <div class="constellation-preview" aria-live="polite">
+            <span class="constellation-preview__number">01</span>
+            <small class="constellation-preview__category">SOFTWARE ENGINEERING</small>
+            <strong class="constellation-preview__title">JDIH Portal</strong>
+            <p class="constellation-preview__description">A legal-information platform built for clearer access, management, and compliance workflows.</p>
+            <em>Hover a node to explore</em>
+          </div>
+        </div>
+      </section>
+
+<!-- Section 02 -->
+      <section class="statement project-showcase" id="projects">
+        <div class="project-sticky">
+          <div class="project-entry" aria-label="Project introduction">
+            <div class="intro-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="intro-copy">
+             <!-- <span class="intro-kicker">MY WAY OF WORKING</span> -->
+              <h2><span>Analytical thinking</span><span>with a business</span><span>perspective.</span></h2>
+              <p> <b></b></p>
+            </div>
+            <span class="intro-count"></span>
+          </div>
+          <div class="project-progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="project-stage">
+            <div class="project-art" aria-hidden="true">
+              <div class="project-document"><div class="document-tab">01</div><div class="document-content"><small>PROJECT BRIEF</small><b class="art-title">JDIH<br />PORTAL</b><i class="art-line line-one"></i><i class="art-line line-two"></i><i class="art-line line-three"></i><div class="art-chart"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+              <div class="floating-chip"><small>KEY RESULT</small><b>↑ 41%</b><span>faster access</span></div>
+            </div>
+            <div class="project-content">
+              <div class="eyebrow">ALDO'S PROJECTS</div>
+              <div class="project-copy is-active" data-project="0"><span class="project-index">01 — SOFTWARE ENGINEER PROJECT</span><h2>Designing &<br />Building <i>JDIH Website.</i></h2><p>Digital legal-information platform built to make public documents easier to find, understand, and manage.</p><strong>PT INKA (Persero)</strong></div>
+              <div class="project-copy" data-project="1"><span class="project-index">02 — DATA ANALYST PROJECT</span><h2>Kimia Farma<br /><i>Big Data</i> Analytics.</h2><p>Performance analytics project to turn operational data into clearer commercial and pharmacy insights.</p><strong>PT Kimia Farma Tbk</strong></div>
+              <div class="project-copy" data-project="2"><span class="project-index">03 — BUSINESS INTELLIGENCE PROJECT</span><h2>Automotive<br />Market <i>Pulse 2025.</i></h2><p>Analytics for navigating EV disruption and improving dealer-stock strategy across the market.</p><strong>GAIKINDO</strong></div>
+              <div class="project-copy" data-project="3"><span class="project-index">04 — BUSINESS INTELLIGENCE PROJECT</span><h2>Future of Work<br /><i>2025.</i></h2><p>Workforce intelligence for navigating the transition to an AI-enabled world of work.</p><strong>Global Workforce Solutions</strong></div>
+            </div>
+          </div>
+          <!--- <p class="project-scroll-note">SCROLL TO DISCOVER <span>↓</span></p> -->
+        </div>
+      </section>
+
+<!-- Section 03 -->
+      <section class="alignment-section" id="impact" aria-labelledby="alignment-title">
+        <div class="alignment-camera">
+          <video class="alignment-video" autoplay muted loop playsinline>
+            <source src="assets/uploads-ssl.webflow.com/620a82992219653ed26aa4e8/6216942de4b62c1ed63071fb_huah_video-transcode.webm" type="video/webm" />
+            <source src="assets/uploads-ssl.webflow.com/620a82992219653ed26aa4e8/6216942de4b62c1ed63071fb_huah_video-transcode.mp4" type="video/mp4" />
+          </video>
+          <div class="alignment-scrim"></div>
+          <div class="alignment-copy">
+            <!-- <span class="eyebrow">03 / STRATEGIC ALIGNMENT</span> -->
+            <h2 id="alignment-title">Toolkit to transform<br/>data into<br/><i>decisions.</i></h2>
+            <p>Delivering robust analysis and clear visual dashboards to turn business challenges into measurable success.</p>
+          </div>
+        </div>
+        <div class="alignment-goals alignment-goals-top" aria-label="Business objectives">
+          <div class="goal-column"></div><div class="goal-column"></div>
+          <div class="goal-column"><span class="goal-tag">SQL</span><span class="goal-tag">Python</span><span class="goal-tag">Excel / Sheets</span><span class="goal-tag">Figma</span></div>
+          <div class="goal-column"></div>
+        </div>
+        <div class="alignment-goals alignment-goals-bottom" aria-label="Growth initiatives">
+          <div class="goal-column"></div><div class="goal-column"></div>
+          <div class="goal-column"><span class="goal-tag">Power BI / Data Studio</span><span class="goal-tag">Google Slides</span><span class="goal-tag">Jira</span><span class="goal-tag">Draw.io</span><span class="goal-tag">Power Query / Colab</span><i class="growth-line" aria-hidden="true"></i></div>
+          <div class="goal-column"></div>
+          <div class="alignment-funnel" aria-hidden="true">
+            <i></i>
+            <i><img src="assets/uploads-ssl.webflow.com/620a82992219653ed26aa4e8/62169511a7e653414f9fb4f3_Rectangle%25201164.svg" alt="" /></i>
+            <i></i>
+            <i><img src="assets/uploads-ssl.webflow.com/620a82992219653ed26aa4e8/6216955d17311f782ccf8194_Rectangle%25201165.svg" alt="" /></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 04 — Webflow's original flowing four-column magnet layout. -->
+      <section class="magnet" aria-labelledby="outcome-title">
+        <div class="goals-grid magnet-grid">
+          <div class="goals-container"></div>
+          <div class="goals-container"></div>
+          <div class="goals-container-gradient">
+            <div class="line"></div>
+            <div class="profile"><div class="alignment-badge"><span class="alignment-badge__label">Sitespirit</span><b aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7" /></svg></b></div><img class="profile-image" src="assets/img/partners/b96e2a9c-961f-4936-a5ba-675e7e712339.png" alt="Project partner" /></div>
+            <div class="profile"><div class="alignment-badge"><span class="alignment-badge__label">Sekawan Media</span><b aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7" /></svg></b></div><img class="profile-image" src="assets/img/partners/sekawan%20media%20logo.png" alt="Sekawan Media" /></div>
+            <div class="profile"><div class="alignment-badge"><span class="alignment-badge__label">PT INKA (Persero)</span><b aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7" /></svg></b></div><img class="profile-image" src="assets/img/partners/Logo_INKA_-_Industri_Kereta_Api_Indonesia.svg" alt="PT INKA" /></div>
+            <div class="profile"><div class="alignment-badge"><span class="alignment-badge__label">PT Kimia Farma Tbk</span><b aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7" /></svg></b></div><img class="profile-image" src="assets/img/partners/7a1c5239-kimia-farma.webp" alt="Kimia Farma" /></div>
+          </div>
+          <div class="goals-container"></div>
+        </div>
+        <div class="subsection-container-4">
+          <h2 id="outcome-title" class="new-headline-magnet">A journey<br />built through<br />challenges<br />& experiences.</h2>
+        </div>
+      </section>
+
+      <section class="end" id="contact">
+        <div class="goals-grid-4">
+          <div class="goals-container"></div><div class="goals-container"></div>
+          <aside class="end-container-gradient">
+            <a class="end-brand" href="#top" aria-label="Back to top">
+              <img src="assets/img/brand/logo%20icon%20aldo.png" alt="ADK Data" />
+            </a>
+            <p class="paragraph-5">Learn more about how clear data and focused decisions can move your organization forward.</p>
+            <div class="div-block-13"></div>
+            <p class="paragraph-6">aldoakbar666@gmail.com<br />Indonesia</p>
+          </aside>
+          <div class="goals-container"></div>
+        </div>
+        <div class="subsection-container-5">
+          <h2 class="new-headline-end">Bring focus<br />back to your<br />mission.</h2>
+          <a class="primary-button-end" href="https://mail.google.com/mail/?view=cm&fs=1&to=aldoakbar666@gmail.com&su=Let's%20work%20together" target="_blank" rel="noopener noreferrer">Let's work together</a>
+        </div>
+      </section>
+    </main>
+    <footer class="career-footer">
+      <div class="career-footer__content"><img src="assets/img/brand/aldo-bnw.svg" width="62" alt="aldo-bnw" /><p>"Data tells the story<br />I help uncover it."</p><nav aria-label="Footer navigation"><a href="https://www.linkedin.com/in/aldorakbar/">LinkedIn</a><a href="mailto:aldoakbar666@gmail.com">Email</a><a href="./html/about.html">About</a></nav></div>
+      <div class="career-footer__bottom"><div><span>Aldo Akbar Portofolio</span></div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      document.querySelectorAll('.constellation-node').forEach((node) => {
+        const preview = document.querySelector('.constellation-preview');
+        const updatePreview = () => {
+          document.querySelectorAll('.constellation-node').forEach((item) => item.classList.toggle('is-active', item === node));
+          preview.querySelector('.constellation-preview__number').textContent = node.dataset.number;
+          preview.querySelector('.constellation-preview__category').textContent = node.dataset.category;
+          preview.querySelector('.constellation-preview__title').textContent = node.dataset.title;
+          preview.querySelector('.constellation-preview__description').textContent = node.dataset.description;
+        };
+        node.addEventListener('mouseenter', updatePreview);
+        node.addEventListener('focus', updatePreview);
+      });
+    </script>
+  </body>
+</html>
