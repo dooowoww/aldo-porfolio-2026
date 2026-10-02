@@ -157,6 +157,22 @@ if (projectShowcase) {
   window.addEventListener('resize', updateProjects);
   setProject(0);
   updateProjects();
+
+  const heroCta = document.querySelector('.hero-cta');
+  if (heroCta) {
+    heroCta.addEventListener('click', event => {
+      event.preventDefault();
+      const isMobile = window.matchMedia('(max-width: 700px)').matches;
+      const projectStart = isMobile ? .44 : .36;
+      const sectionTop = window.scrollY + projectShowcase.getBoundingClientRect().top;
+      const scrollRange = Math.max(0, projectShowcase.offsetHeight - window.innerHeight);
+
+      projectShowcase.classList.add('projects-started');
+      setProject(0);
+      window.scrollTo({ top: sectionTop + scrollRange * projectStart, behavior: 'smooth' });
+    });
+  }
+
 }
 
 const toolPhase = document.querySelector('.tool-phase');
