@@ -12,8 +12,29 @@
       rel="stylesheet"
     />
     <link href="../css/ai-impact-summ.css" rel="stylesheet" />
+    <style>
+      body > .nav{box-sizing:border-box;position:fixed;z-index:1000;top:0;left:0;width:100%;height:66px;padding:0 max(24px,5vw);display:flex;align-items:center;justify-content:space-between;background:transparent;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;font-size:12px;line-height:normal;letter-spacing:-.01em;transition:background .35s ease,color .35s ease,box-shadow .35s ease,backdrop-filter .35s ease}body > .nav.scrolled{background:rgba(255,255,255,.78);box-shadow:0 9px 28px rgba(76,88,120,.11);-webkit-backdrop-filter:blur(18px) saturate(145%);backdrop-filter:blur(18px) saturate(145%);color:#8891aa}body > .nav .brand{display:flex;flex:0 0 60px;width:60px;height:60px;margin:0;padding:0;align-items:center;justify-content:center;line-height:0;text-decoration:none;position:relative;z-index:1}body > .nav .brand img{display:block;width:60px;height:auto;max-width:none;margin:0;object-fit:contain;transform:none}body > .nav .nav-links{display:flex;align-items:center;gap:27px;margin-left:auto;margin-right:28px}body > .nav .nav-links a{color:inherit;text-decoration:none;font-size:13px;transition:color .2s}body > .nav .nav-links a:hover,body > .nav .nav-links a[aria-current="page"]{color:#ff3c8d}body > .nav .nav-contact{box-sizing:border-box;display:inline-flex;width:56px;height:36px;align-items:center;justify-content:center;border:1px solid currentColor;border-radius:99px;color:inherit;text-decoration:none;font-size:12px;transition:background .2s,transform .2s}body > .nav.scrolled .nav-contact{border:0;background:#bdc4d7;color:#fff}body > .nav .nav-contact:hover{background:#ff3c8d;border-color:#ff3c8d;color:#fff;transform:scale(1.03)}body > .nav .mobile-menu-toggle{display:none}.mobile-menu{display:none}
+      @media(max-width:700px){body > .nav{height:56px;padding:0 16px;background:rgba(255,255,255,.14);border-bottom:1px solid rgba(149,160,191,.24);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}body > .nav.scrolled{background:rgba(255,255,255,.62);box-shadow:0 9px 28px rgba(76,88,120,.11);-webkit-backdrop-filter:blur(18px) saturate(145%);backdrop-filter:blur(18px) saturate(145%)}body > .nav .brand{flex-basis:32px;width:32px;height:32px}body > .nav .brand img{width:32px}body > .nav .nav-links{display:none}body > .nav .nav-contact{display:none}body > .nav .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:28px;height:28px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;z-index:20;box-shadow:none}body > .nav .mobile-menu-toggle span{display:block;width:22px;height:2px;border-radius:99px;background:#f43a86;transition:transform .2s ease,opacity .2s ease}body > .nav .mobile-menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}body > .nav .mobile-menu-toggle.is-open span:nth-child(2){opacity:0}body > .nav .mobile-menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.mobile-menu{position:fixed;top:66px;left:50%;right:auto;display:block;width:calc(100% - 32px);max-width:420px;max-height:0;overflow:hidden;opacity:0;pointer-events:none;border:1px solid rgba(149,160,191,.3);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(244,247,255,.96));backdrop-filter:blur(14px);box-shadow:0 20px 54px rgba(76,88,120,.18);z-index:20;transform:translateX(-50%);transition:max-height .28s ease,opacity .24s ease,transform .24s ease,pointer-events .24s ease}.mobile-menu.is-open{max-height:320px !important;opacity:1 !important;pointer-events:auto;transform:translateX(-50%) translateY(0)}.mobile-menu__nav{display:flex;flex-direction:column;padding:12px}.mobile-menu__nav a{padding:14px 12px;border-radius:12px;color:#41507a;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:-.02em;text-align:center}.mobile-menu__nav a + a{border-top:1px solid rgba(137,152,191,.25)}.mobile-menu__nav a:last-child{margin-top:4px;background:linear-gradient(135deg,#f43a86,#d855a8);color:#fff;box-shadow:0 10px 26px rgba(244,58,134,.24)}}
+    </style>
   </head>
   <body class="analysis-page">
+    <header class="nav">
+      <a class="brand" href="../index.html#top" aria-label="Back to overview"><img src="../assets/img/brand/logo%20icon%20aldo%20outline%20warna_no_bg.png" alt="Logo Aldo" /></a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="../index.html">Overview</a><a href="./careers.html">Careers</a><a href="./project.html" aria-current="page">Project</a><a href="./about.html">About</a></nav>
+      <a class="nav-contact" href="/document/CV_ALDO_RAJENDRA_AKBAR.pdf">CV</a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <a href="../index.html">Overview</a>
+          <a href="./careers.html">Careers</a>
+          <a href="./project.html" aria-current="page">Project</a>
+          <a href="./about.html">About</a>
+          <a href="/document/CV_ALDO_RAJENDRA_AKBAR.pdf">CV</a>
+        </nav>
+      </div>
+    </header>
     <main>
       <section class="analysis-hero">
         <div class="analysis-shell">
@@ -100,5 +121,55 @@
         </div>
       </article>
     </main>
+    <script>
+      const nav = document.querySelector('.nav');
+      const updateNavigation = () => {
+        if (!nav) return;
+        nav.classList.toggle('scrolled', window.scrollY > 24);
+      };
+      updateNavigation();
+      window.addEventListener('scroll', updateNavigation, { passive: true });
+
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      if (mobileMenuToggle && mobileMenu) {
+        const closeMobileMenu = () => {
+          mobileMenuToggle.classList.remove('is-open');
+          mobileMenu.classList.remove('is-open');
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+          mobileMenu.style.maxHeight = '0px';
+          mobileMenu.style.opacity = '0';
+          mobileMenu.style.pointerEvents = 'none';
+        };
+
+        mobileMenuToggle.addEventListener('click', () => {
+          const isOpen = mobileMenuToggle.classList.toggle('is-open');
+          mobileMenu.classList.toggle('is-open', isOpen);
+          mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+          mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+
+          if (isOpen) {
+            mobileMenu.style.maxHeight = `${mobileMenu.scrollHeight + 8}px`;
+            mobileMenu.style.opacity = '1';
+            mobileMenu.style.pointerEvents = 'auto';
+          } else {
+            closeMobileMenu();
+          }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!mobileMenu.contains(target) && !mobileMenuToggle.contains(target)) {
+            closeMobileMenu();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
