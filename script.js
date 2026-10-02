@@ -135,10 +135,14 @@ if (projectShowcase) {
     const rect = projectShowcase.getBoundingClientRect();
     const available = Math.max(1, rect.height - window.innerHeight);
     const progress = Math.min(1, Math.max(0, -rect.top / available));
-    const introProgress = Math.min(1, progress * 5);
-    const projectProgress = Math.min(1, Math.max(0, (progress - .2) / .8));
+    // Mobile gets a longer reading phase before the project cards crossfade in.
+    const isMobile = window.matchMedia('(max-width: 700px)').matches;
+    const introEnd = isMobile ? .38 : .32;
+    const projectStart = isMobile ? .44 : .36;
+    const introProgress = Math.min(1, progress / introEnd);
+    const projectProgress = Math.min(1, Math.max(0, (progress - projectStart) / (1 - projectStart)));
     projectEntry.style.setProperty('--intro-progress', introProgress.toFixed(3));
-    projectShowcase.classList.toggle('projects-started', progress >= .18);
+    projectShowcase.classList.toggle('projects-started', progress >= projectStart);
     setProject(Math.min(3, Math.floor(projectProgress * 4)));
   };
   let projectFrame;

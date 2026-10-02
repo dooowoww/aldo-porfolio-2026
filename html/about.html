@@ -10,13 +10,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/about.css" />
-    <style>footer.career-footer{display:block}</style>
+    <style>
+      footer.career-footer{display:block}
+      .nav .mobile-menu-toggle{display:none}.mobile-menu{display:none}
+      @media(max-width:700px){.nav{height:56px;padding:0 16px}.brand{flex-basis:32px;width:32px;height:32px}.brand img{width:32px}.nav-links{display:none}.nav-contact{display:none}.nav .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:28px;height:28px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;z-index:20;box-shadow:none}.nav .mobile-menu-toggle span{display:block;width:22px;height:2px;border-radius:99px;background:#f43a86;transition:transform .2s ease,opacity .2s ease}.nav .mobile-menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav .mobile-menu-toggle.is-open span:nth-child(2){opacity:0}.nav .mobile-menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.mobile-menu{position:fixed;top:66px;left:16px;right:16px;display:block;max-height:0;overflow:hidden;opacity:0;pointer-events:none;border:1px solid rgba(149,160,191,.3);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(244,247,255,.96));backdrop-filter:blur(14px);box-shadow:0 20px 54px rgba(76,88,120,.18);z-index:20;transition:max-height .28s ease,opacity .24s ease,pointer-events .24s ease}.mobile-menu.is-open{max-height:280px;opacity:1;pointer-events:auto}.mobile-menu__nav{display:flex;flex-direction:column;padding:12px}.mobile-menu__nav a{padding:14px 12px;border-radius:12px;color:#41507a;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:-.02em}.mobile-menu__nav a + a{border-top:1px solid rgba(137,152,191,.25)}.mobile-menu__nav a:last-child{margin-top:4px;background:linear-gradient(135deg,#f43a86,#d855a8);color:#fff;box-shadow:0 10px 26px rgba(244,58,134,.24)}}
+    </style>
   </head>
   <body>
     <header class="nav">
       <a class="brand" href="../index.html#top" aria-label="Back to overview"><img src="../assets/img/brand/logo%20icon%20aldo%20outline%20warna_no_bg.png" alt="Logo Aldo" /></a>
       <nav class="nav-links" aria-label="Primary navigation"><a href="../index.html">Overview</a><a href="./careers.html">Careers</a><a href="./project.html">Project</a><a href="./about.html" aria-current="page">About</a></nav>
       <a class="nav-contact" href="mailto:hello@yourname.com">CV </a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <a href="../index.html">Overview</a>
+          <a href="./careers.html">Careers</a>
+          <a href="./project.html">Project</a>
+          <a href="./about.html" aria-current="page">About</a>
+          <a href="mailto:hello@yourname.com">CV</a>
+        </nav>
+      </div>
     </header>
     <main class="about-page">
       <section class="intro" aria-labelledby="about-title">
@@ -54,13 +72,35 @@
     </main>
     <footer class="career-footer">
       <div class="career-footer__content"><img src="../assets/img/brand/aldo-bnw.svg" width="62" alt="aldo-bnw" /><p>"Data tells the story<br />I help uncover it."</p><nav aria-label="Footer navigation"><a href="https://www.linkedin.com/in/aldorakbar/">LinkedIn</a><a href="mailto:aldoakbar666@gmail.com">Email</a><a href="./about.html">About</a></nav></div>
-      <div class="career-footer__bottom"><div><span>Aldo Akbar Portofolio</span></div>
+      <div class="career-footer__bottom"><div><span>Aldo Akbar Portofolio</span></div></div>
     </footer>
     <script>
       const nav = document.querySelector('.nav');
       const updateNavigation = () => nav.classList.toggle('scrolled', window.scrollY > 24);
       window.addEventListener('scroll', updateNavigation, { passive: true });
       updateNavigation();
+
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+          const willOpen = !mobileMenuToggle.classList.contains('is-open');
+          mobileMenuToggle.classList.toggle('is-open', willOpen);
+          mobileMenu.classList.toggle('is-open', willOpen);
+          mobileMenuToggle.setAttribute('aria-expanded', String(willOpen));
+          mobileMenu.setAttribute('aria-hidden', String(!willOpen));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('is-open');
+            mobileMenu.classList.remove('is-open');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
     </script>
   </body>
 </html>

@@ -15,10 +15,10 @@
       footer.career-footer{display:block;margin-top:0;color:initial}
       /* First scroll phase and project cards share one sticky section. */
       .project-showcase{height:500vh;min-height:3100px}
-      .project-entry{position:absolute;z-index:3;inset:0;display:grid;place-items:center;overflow:hidden;pointer-events:none;opacity:1;transition:opacity .35s ease}
+      .project-entry{position:absolute;z-index:3;inset:0;display:grid;place-items:center;overflow:hidden;pointer-events:none;opacity:1;transition:opacity .55s ease}
       .project-entry::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,#5a1f55 100%);pointer-events:none}
       .project-entry .intro-copy{position:relative;z-index:2}.project-entry .intro-count{z-index:2}.project-entry .intro-grid{z-index:1}
-      .project-stage,.project-progress,.project-scroll-note{opacity:0;transition:opacity .4s ease}
+      .project-stage,.project-progress,.project-scroll-note{opacity:0;transition:opacity .55s ease}
       .projects-started .project-entry{opacity:0}.projects-started .project-stage,.projects-started .project-progress,.projects-started .project-scroll-note{opacity:1}
       .project-stage{transition-delay:.08s}.project-progress{transition-delay:.16s}
       @media(max-width:700px){.project-showcase{height:500vh;min-height:2800px}.project-entry .intro-copy{padding:0 20px}.project-entry .intro-copy h2{font-size:clamp(3.2rem,14vw,5.5rem)}.project-entry .intro-grid{grid-template-columns:repeat(3,140px);grid-template-rows:repeat(2,100px);gap:16px}.project-entry .intro-count{right:22px;bottom:5vh;font-size:9px}}
@@ -32,7 +32,21 @@
         <img src="assets/img/brand/logo%20icon%20aldo%20outline%20warna_no_bg.png" alt="Logo aldo" />
       </a>
       <nav class="nav-links" aria-label="Primary navigation"><a href="#top">Overview</a><a href="./html/careers.html">Careers</a><a href="./html/project.html">Project</a><a href="./html/about.html">About</a></nav>
-      <a class="nav-contact" href="mailto:hello@yourname.com">CV <span>↗</span></a>
+      <a class="nav-contact" href="mailto:aldoakbar666@gmail.com?subject=CV%20Request">CV <span>↗</span></a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <a href="#top">Overview</a>
+          <a href="./html/careers.html">Careers</a>
+          <a href="./html/project.html">Project</a>
+          <a href="./html/about.html">About</a>
+          <a href="mailto:aldoakbar666@gmail.com?subject=CV%20Request">CV</a>
+        </nav>
+      </div>
     </header>
 <!-- Section 01 (Hero)-->
     <main id="top">
@@ -41,7 +55,7 @@
            <div class="hero-mark"></div>
           <h1>Aligning<br />insight to<br /><span>impact.</span></h1>
           <p>I turn data into clear<br />decisions.</p>
-          <a class="hero-cta" href="#work">Explore my work <span>↓</span></a>
+          <a class="hero-cta" href="#work">Explore my work</a>
         </div>
         <div class="data-stage project-constellation" aria-label="Interactive project constellation">
           <div class="constellation-orbit">
@@ -181,6 +195,36 @@
         node.addEventListener('mouseenter', updatePreview);
         node.addEventListener('focus', updatePreview);
       });
+
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      if (mobileMenuToggle && mobileMenu) {
+        const closeMobileMenu = () => {
+          mobileMenuToggle.classList.remove('is-open');
+          mobileMenu.classList.remove('is-open');
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+        };
+
+        mobileMenuToggle.addEventListener('click', () => {
+          const isOpen = mobileMenuToggle.classList.toggle('is-open');
+          mobileMenu.classList.toggle('is-open', isOpen);
+          mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+          mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!mobileMenu.contains(target) && !mobileMenuToggle.contains(target)) {
+            closeMobileMenu();
+          }
+        });
+      }
     </script>
   </body>
 </html>
